@@ -7,11 +7,11 @@
 library(CNVtools)
 library(ggplot2)
 library(foreign)
-zdata <- read.table("/Users/michaelm/Desktop/FCGR/CNVtools/BRAGGSS eular_resp zcnp.txt",
+zdata <- read.table(,
                     h=T, stringsAsFactors=F)
 z.signal <- zdata$signal
 
-pdf("/Users/michaelm/Desktop/FCGR/znorm_cnp2a.pdf")
+pdf("znorm_cnp2a.pdf")
 hist(z.signal, breaks=50, main="Z-score 2A CNP", cex.lab=1.3)
 dev.off()
 
@@ -81,7 +81,7 @@ OR2 <- (p1*(1-p3))/(p3*(1-p1))
 print(OR2)
 
 # write out data to .csv file
-write.table(z.test$posterior.H1, file="/Users/michaelm/Desktop/FCGR/posterior_z.csv", 
+write.table(z.test$posterior.H1, file="", 
             sep=",", row.names=FALSE)
 
 # test association with LR test
@@ -130,7 +130,7 @@ print(LR.statdup)
 1-pchisq(LR.statdup, df=1)
 
 # Use the posterior probability estimates to test CNV on DAS28 CRP
-clin.data <- read.dta("/Users/michaelm/Desktop/FCGR/BRAGGSS/BRAGGSS_fcgr_cnv_clinical.dta")
+clin.data <- read.dta("")
 clin.merge <- merge(z.fit$posterior.H0, clin.data, by.x=c("subject"),
                     by.y=c("sample_id"))
 

@@ -1,5 +1,3 @@
-# using R 2.15.0 in VM Fedora 15 sandbox environment
-
 # read in FCGR2A:FCGR2C CNP z-scores - standardised to mean 0 standard deviation 1.  
 # Post-QC.
 
